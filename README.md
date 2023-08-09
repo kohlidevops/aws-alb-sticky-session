@@ -1,5 +1,17 @@
 # aws-alb-sticky-session
 
+It is possible to implement the stickiness, so that the same client is always redirected to the same instance behind the Load balancer.
+
+This works for Classic Load balancer, Application Load balancer and Network Load balancer.
+
+The "cookie" used for stickiness has an expiration date that you control.
+
+Use cases: Make ensure the user doesn't lose his session data.
+
+Enabling stickiness may bring imbalance to the load over the backend EC2 instances.
+
+Don't use AWSALB, AWSALBAPP or AWSALBTG cookies. Because its reserved for use by the ELB.
+
 I'm assuming that Application Load balancer is mapped to two different EC2 instances. When I hit the ALB DNS Url,
 
 ![image](https://github.com/kohlidevops/aws-alb-sticky-session/assets/100069489/abc68d7a-b7a6-4232-9e19-4e0948e570c4)
